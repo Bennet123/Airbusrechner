@@ -1,0 +1,252 @@
+/* --------------------------------------------------------------
+   Optik: angelehnt an eine Flughafen-Anzeigetafel
+   Dunkler Hintergrund, helle Schrift, Monospace für die Zahlen
+   -------------------------------------------------------------- */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Helvetica, Arial, sans-serif;
+  background-color: #0e1621;
+  color: #e6edf5;
+  line-height: 1.6;
+  padding: 32px 20px 60px;
+}
+
+header,
+main,
+footer {
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+/* ---------- Kopfbereich ---------- */
+
+header {
+  margin-bottom: 36px;
+}
+
+.eyebrow {
+  font-family: "Courier New", monospace;
+  font-size: 12px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #f0a92c;
+  margin-bottom: 8px;
+}
+
+h1 {
+  font-size: 34px;
+  line-height: 1.15;
+  margin-bottom: 12px;
+}
+
+.untertitel {
+  color: #9fb0c4;
+  max-width: 55ch;
+}
+
+/* ---------- Eingabebereich ---------- */
+
+.eingabe {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: 14px;
+  background-color: #16212f;
+  border: 1px solid #24344a;
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 28px;
+}
+
+.feld {
+  flex: 1 1 200px;
+}
+
+label {
+  display: block;
+  font-size: 12px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: #9fb0c4;
+  margin-bottom: 6px;
+}
+
+select {
+  width: 100%;
+  padding: 10px 12px;
+  font-size: 15px;
+  font-family: inherit;
+  color: #e6edf5;
+  background-color: #0e1621;
+  border: 1px solid #2c3f59;
+  border-radius: 6px;
+}
+
+/* Farben auch für die aufgeklappte Liste (Firefox) */
+option {
+  background-color: #0e1621;
+  color: #e6edf5;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+select:focus,
+button:focus {
+  outline: 2px solid #f0a92c;
+  outline-offset: 2px;
+}
+
+.pfeil {
+  color: #f0a92c;
+  font-size: 22px;
+  padding-bottom: 8px;
+}
+
+button {
+  flex: 1 1 100%;
+  padding: 12px 20px;
+  font-size: 15px;
+  font-family: inherit;
+  font-weight: 600;
+  color: #0e1621;
+  background-color: #f0a92c;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #ffbe4d;
+}
+
+/* ---------- Anzeigetafel ---------- */
+
+.anzeigetafel {
+  background-color: #16212f;
+  border: 1px solid #24344a;
+  border-left: 4px solid #f0a92c;
+  border-radius: 10px;
+  padding: 24px;
+  margin-bottom: 32px;
+}
+
+.route {
+  font-family: "Courier New", monospace;
+  font-size: 20px;
+  letter-spacing: 4px;
+  color: #f0a92c;
+  margin-bottom: 6px;
+}
+
+.distanz {
+  font-family: "Courier New", monospace;
+  font-size: 48px;
+  font-weight: bold;
+  line-height: 1.1;
+}
+
+.einheit {
+  font-size: 20px;
+  color: #9fb0c4;
+  margin-left: 8px;
+}
+
+.flugzeit {
+  color: #9fb0c4;
+  font-size: 14px;
+  margin-top: 4px;
+}
+
+/* ---------- Flottenliste ---------- */
+
+h2 {
+  font-size: 17px;
+  margin-bottom: 12px;
+}
+
+.flotte {
+  list-style: none;
+}
+
+.flotte li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  border: 1px solid #24344a;
+  border-radius: 8px;
+  margin-bottom: 8px;
+  background-color: #16212f;
+}
+
+.modell {
+  font-weight: 600;
+  flex: 1 1 auto;
+}
+
+.reichweite {
+  font-family: "Courier New", monospace;
+  font-size: 14px;
+  color: #9fb0c4;
+}
+
+.status {
+  font-size: 12px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+
+.kann .status {
+  background-color: #14432a;
+  color: #6fdc8c;
+}
+
+.kann-nicht {
+  opacity: 0.55;
+}
+
+.kann-nicht .status {
+  background-color: #3a1f1f;
+  color: #ff8f8f;
+}
+
+/* ---------- Hinweis und Fußzeile ---------- */
+
+.hinweis {
+  margin-top: 22px;
+  padding: 12px 16px;
+  border-left: 3px solid #2c3f59;
+  color: #9fb0c4;
+  font-size: 14px;
+}
+
+footer {
+  margin-top: 48px;
+  padding-top: 20px;
+  border-top: 1px solid #24344a;
+  color: #6c7f95;
+  font-size: 12px;
+}
+
+footer p {
+  margin-bottom: 6px;
+}
+
+/* ---------- Handy ---------- */
+
+@media (max-width: 560px) {
+  h1 { font-size: 26px; }
+  .distanz { font-size: 38px; }
+  .pfeil { display: none; }
+}

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Schafft der Airbus das?</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <p class="eyebrow">Reichweiten-Rechner</p>
+    <h1>Schafft der Airbus das?</h1>
+    <p class="untertitel">
+      Zwei Flughäfen auswählen &ndash; der Rechner ermittelt die Luftlinie
+      und zeigt, welche Airbus-Modelle die Strecke ohne Zwischenstopp schaffen.
+    </p>
+  </header>
+
+  <main>
+
+    <!-- Eingabebereich: zwei Auswahlfelder + Button -->
+    <section class="eingabe">
+      <div class="feld">
+        <label for="start">Von</label>
+        <select id="start"></select>
+      </div>
+
+      <div class="pfeil" aria-hidden="true">&rarr;</div>
+
+      <div class="feld">
+        <label for="ziel">Nach</label>
+        <select id="ziel"></select>
+      </div>
+
+      <button id="berechnen">Strecke berechnen</button>
+    </section>
+
+    <!-- Ergebnisbereich: wird per JavaScript gefüllt -->
+    <section class="ergebnis" id="ergebnis" hidden>
+
+      <div class="anzeigetafel">
+        <div class="route" id="route"></div>
+        <div class="distanz">
+          <span id="distanz">0</span><span class="einheit" id="einheit">km</span>
+        </div>
+        <button id="einheitWechslen" type="button">in Meilen (NM) anzeigen</button>
+        <div class="flugzeit" id="flugzeit"></div>
+      </div>
+
+      <h2>Welche Modelle schaffen die Strecke?</h2>
+      <ul class="flotte" id="flotte"></ul>
+
+    </section>
+
+    <p class="hinweis" id="hinweis">
+      Tipp: Probier mal Hamburg &rarr; Sydney. Das schafft kein einziges Modell.
+    </p>
+
+  </main>
+
+  <footer>
+    <p>
+      Berechnet wird die Luftlinie (Großkreisentfernung) mit der Haversine-Formel.
+      Reichweiten sind ungefähre Herstellerangaben und in der Praxis von Beladung,
+      Wind und Route abhängig.
+    </p>
+    <p>Ein Lernprojekt von Bennet Wendt.</p>
+  </footer>
+
+  <script src="flughaefen.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
