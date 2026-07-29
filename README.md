@@ -3,7 +3,7 @@
 Ein kleiner Reichweiten-Rechner: Man wählt zwei Flughäfen aus und sieht die Luftlinie
 dazwischen — und welche Airbus-Modelle die Strecke ohne Zwischenstopp schaffen würden.
 
-**Live ansehen:** _(Link kommt hier hin, sobald GitHub Pages an ist)_
+**Live ansehen:** https://bennet123.github.io/Airbusrechner/
 
 ---
 
